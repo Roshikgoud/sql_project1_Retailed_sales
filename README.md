@@ -79,15 +79,14 @@ WHERE sale_date = '2022-11-05';
 
 2. **Writing a SQL query to retrieve all transactions where the category is 'Clothing' and the quantity sold is more than 4 in the month of Nov-2022**:
 ```sql
-SELECT 
-  *
-FROM retail_sales
-WHERE 
-    category = 'Clothing'
-    AND 
-    TO_CHAR(sale_date, 'YYYY-MM') = '2022-11'
-    AND
-    quantity >= 4
+  select *
+        from retail_sales
+        where
+        category ='Clothing' 
+        and 
+DATE_FORMAT(sale_date, '%Y-%m') = '2022-11' -- You need to replace DATE_FORMAT(sale_date, '%Y-%m')  to  with the Oracle or PostgreSQL databases. equivalent: TO_CHAR(sale_date, 'YYYY-MM')
+and 
+quantity >= 4 
 ```
 
 3. **Writing  a SQL query to calculate the total sales (total_sale) for each category.**:
